@@ -10,30 +10,47 @@ export default function Hello() {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-  // useEffect(() => {}, []);
+
   return (
     <>
-      {/* <h2> hello</h2> */}
       {data.map((obj) => {
         return (
-          // <li>
-          <div>
-            <li>
-              {obj.name}({obj.username}) email:{obj.email}
+          <div
+            style={{
+              display: "block",
+              position: "relative",
+              // position: "raletive",
+              height: "250px",
+              // width:"600px",
+              margin: "10px",
+              padding: "10px",
+
+              background: "yellow"
+            }}
+          >
+            <h1> {obj.name}</h1>
+            <p>
+              <span>Email : </span>
+              {obj.email}{" "}
+            </p>
+            <p>
+              <span>Phone:</span>
+              {obj.phone}{" "}
+            </p>
+            <p>
+              <span>Company:</span> {obj.company.name}{" "}
+            </p>
+            <p>
+              <span>website:</span> {obj.website}{" "}
+            </p>
+            <p>
+              <span>Address:</span>
               {obj.address.street}
               {obj.address.suite}
               {obj.address.city}
               {obj.address.zipcode}
-              {obj.address.geo.lat}
-              {obj.address.geo.lng}
-              {obj.phone}
-              {obj.website}
-              {obj.company.name}
-              {obj.company.catchPhrase}
-              {obj.company.bs}
-            </li>
+            </p>
           </div>
-          // </li>
         );
       })}{" "}
     </>
